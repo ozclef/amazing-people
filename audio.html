@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de Audio HTML</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-4 sm:p-6">
+
+    <div class="bg-white rounded-xl shadow-2xl p-6 sm:p-8 w-full max-w-xl text-center">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-4">
+            ¡Hola! Aquí tienes un reproductor de audio
+        </h1>
+        <p class="text-gray-600 mb-6">
+            Usa los controles para reproducir el archivo de sonido.
+        </p>
+
+        <!--
+            La etiqueta <audio> es para incrustar audio.
+            Atributos clave:
+            - src: La ruta al archivo de audio.
+            - controls: Añade los controles de reproducción (reproducir, pausar, volumen, etc.).
+            - Si el navegador no puede reproducir el formato, se muestra el texto dentro de la etiqueta.
+        -->
+        <div class="my-8 flex justify-center">
+            <audio controls class="w-full max-w-md bg-gray-100 rounded-lg p-3 shadow-md">
+                <!--
+                    Aquí se usa una ruta relativa que asume que tienes una carpeta 'assets'
+                    en el mismo nivel que este archivo, y dentro un archivo de audio llamado 'musica_ejemplo.mp3'.
+                    ¡Asegúrate de cambiar esta ruta por la de tu archivo real!
+                -->
+                <source src="./assets/musica_ejemplo.mp3" type="audio/mpeg">
+                Tu navegador no soporta la etiqueta de audio.
+            </audio>
+        </div>
+
+        <p class="text-sm text-gray-400 mt-8">
+            Para que funcione, debes colocar tu archivo de audio en la ruta correcta.<br>Por ejemplo: `/tu_proyecto/assets/musica_ejemplo.mp3`
+        </p>
+    </div>
+</body>
+</html>

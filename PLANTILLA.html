@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+										<meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+										
+<html lang="es">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación Completa</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chosen Palette: Gray, Blue & White -->
+    <!-- Application Structure Plan: La aplicación está diseñada en un modelo de una sola página con una estructura de cuadrícula (grid) para escritorio y un layout de desplazamiento horizontal (flexbox con overflow) para móviles. La arquitectura principal consiste en tres secciones: un aside izquierdo para el menú de navegación, un main central para el contenido principal, y un aside derecho para información complementaria. Se eligió esta estructura para proporcionar una experiencia de usuario optimizada en ambos tipos de dispositivos. En móvil, el contenido principal domina la pantalla, y los menús laterales están ocultos pero accesibles con un simple deslizamiento. En escritorio, los tres paneles son visibles simultáneamente para una máxima productividad, y la cuadrícula asegura que los tamaños se mantengan proporcionales y legibles. -->
+    <!-- Visualization & Content Choices: 
+        - Layout General -> Meta: Organizar -> Presentación: Contenedor con CSS Grid y Flexbox (Tailwind) -> Interacción: Desplazamiento horizontal para móviles, escalado automático con el zoom en escritorio -> Justificación: Permite un control preciso sobre la distribución del espacio en diferentes dispositivos, solucionando los problemas de visualización del usuario.
+        - Se usan placeholders de contenido para demostrar el layout, ya que el objetivo es la estructura.
+        - No se utilizan gráficos ni tablas interactivas en esta versión, ya que el enfoque está en la arquitectura de la página. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <!--
+    
+    
+    -->
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: sans-serif;
+            background-color: #f3f4f6;
+        }
+
+        .scroll-container {
+            width: 100%;
+            height: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+            scroll-snap-type: x mandatory;
+        }
+
+        .scroll-item {
+            scroll-snap-align: center;
+        }
+    </style>
+</head>
+<body class="flex flex-col h-screen">
+
+    <!-- Desktop: Layout de 3 columnas -->
+    <div class="hidden md:grid md:grid-cols-[280px_1fr_280px] h-full">
+        <aside class="w-full bg-gray-800 text-white p-6 shadow-lg">
+            <h2 class="text-xl font-bold mb-4">Menú Izquierdo</h2>
+            <p class="text-gray-400">Contenido del menú de navegación. Puedes poner aquí los enlaces, botones y cualquier otro control.</p>
+        </aside>
+
+        <main class="w-full h-full p-8 overflow-y-auto">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-3xl font-bold mb-4">Contenido Principal</h1>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                										
+                										a.
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+             
+                </p>
+                <div class="mt-8 h-[1200px] bg-white rounded-lg shadow-md p-6 flex items-center justify-center">
+                    <p class="text-gray-500 text-center">Aquí va el contenido de tu aplicación.</p>
+                </div>
+            </div>
+        </main>
+
+        <aside class="w-full bg-gray-200 p-6 shadow-lg overflow-y-auto">
+            <h2 class="text-xl font-bold mb-4">Menú Derecho</h2>
+            <p class="text-gray-600 mb-6">Este es un menú lateral para información complementaria, notificaciones, o un panel de control rápido. En el diseño para móvil, este menú y el de la izquierda se pueden deslizar para verlos completos.</p>
+            
+            <div class="bg-white rounded-lg p-4 shadow-md">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">El Valor del Programador</h3>
+                <p class="text-sm text-gray-700 leading-relaxed">
+                    El profesionalismo y la ética de un programador se basan en reglas, principios y normas que siempre hay que seguir. En el momento en que un programador captura informáticamente en código situaciones de la vida real o cómo resolver problemas, debido a que no solo involucra matemáticas, álgebra e incluso más allá de la filosofía, captura mucho más que solo datos.
+                </p>
+                <p class="text-sm text-gray-700 leading-relaxed mt-4">
+                    Debido a los principios de acuerdos de privacidad en las leyes en la mayoría de los países, hay que estar de acuerdo en proteger las identidades y la privacidad de cada persona, porque incluso el tener a la mayor parte de la población humana es una evidente responsabilidad. Esto es similar a la ética moral y el sentido de justicia que deben tener un psicólogo o un abogado para proteger la información de cada individuo.
+                </p>
+                <p class="text-sm text-gray-700 leading-relaxed mt-4">
+                    Debido a esto, contratar los servicios de un programador en informática te lleva a involucrar datos de derecho, filosofía, matemáticas, álgebra, ciencia, química y cualquier tipo de tema de suma importancia, lo que te lleva a aprender de todo.
+                </p>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Mobile: Layout de 3 paneles con scroll horizontal -->
+    <div id="mobile-layout" class="md:hidden w-screen h-full flex flex-row flex-nowrap scroll-container">
+        <div id="left-aside" class="scroll-item w-[80vw] bg-gray-800 text-white p-6 flex-shrink-0">
+            <h2 class="text-xl font-bold mb-4">Menú Izquierdo</h2>
+            <p class="text-gray-400">Contenido del menú de navegación. Desliza para regresar al centro.</p>
+        </div>
+
+        <main id="main-content" class="scroll-item w-screen p-8 overflow-y-auto flex-shrink-0">
+            <h1 class="text-3xl font-bold mb-4">Contenido Principal</h1>
+            <p class="text-gray-700 leading-relaxed mb-4">Este es el área central de tu aplicación. En el móvil, ocupa la pantalla completa. Para ver los menús laterales, simplemente desliza la pantalla hacia la izquierda o la derecha.</p>
+            <p class="text-gray-700 leading-relaxed">Los paneles laterales estarán ligeramente "aplastados" en los bordes, indicando que hay más contenido que puedes explorar con un simple gesto. En los móviles, esta es la forma más intuitiva de navegar por menús ocultos.</p>
+             <div class="mt-8 h-[1200px] bg-white rounded-lg shadow-md p-6 flex items-center justify-center">
+                 <iframe src="https://gemini.google.com/"></iframe>
+             </div>            
+                <p class="text-gray-500 text-center">Aquí va el contenido de tu aplicación.</p>
+                 <!--   </div>-->
+        </main>
+        
+        <div id="right-aside" class="scroll-item w-[80vw] bg-gray-200 p-6 flex-shrink-0 overflow-y-auto">
+            <h2 class="text-xl font-bold mb-4">Menú Derecho</h2>
+            <p class="text-gray-600 mb-6">Contenido para el menú derecho. Desliza para regresar al centro.</p>
+            
+            <div class="bg-white rounded-lg p-4 shadow-md">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">El Valor del Programador</h3>
+                <p class="text-sm text-gray-700 leading-relaxed">
+                    El profesionalismo y la ética de un programador se basan en reglas, principios y normas que siempre hay que seguir. En el momento en que un programador captura informáticamente en código situaciones de la vida real o cómo resolver problemas, debido a que no solo involucra matemáticas, álgebra e incluso más allá de la filosofía, captura mucho más que solo datos.
+                </p>
+                <p class="text-sm text-gray-700 leading-relaxed mt-4">
+                    Debido a los principios de acuerdos de privacidad en las leyes en la mayoría de los países, hay que estar de acuerdo en proteger las identidades y la privacidad de cada persona, porque incluso el tener a la mayor parte de la población humana es una evidente responsabilidad. Esto es similar a la ética moral y el sentido de justicia que deben tener un psicólogo o un abogado para proteger la información de cada individuo.
+                </p>
+                <p class="text-sm text-gray-700 leading-relaxed mt-4">
+                    Debido a esto, contratar los servicios de un programador en informática te lleva a involucrar datos de derecho, filosofía, matemáticas, álgebra, ciencia, química y cualquier tipo de tema de suma importancia, lo que te lleva a aprender de todo.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const scrollContainer = document.querySelector('.scroll-container');
+        const mainContent = document.getElementById('main-content');
+        
+        if (scrollContainer) {
+            window.onload = () => {
+                scrollContainer.scrollLeft = mainContent.offsetLeft;
+            };
+        }
+    </script>
+</body>
+</html>

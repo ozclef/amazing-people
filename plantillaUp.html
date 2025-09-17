@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>base!</title>
+  <style>
+  @media (max-width: 768px) { /* Te recomiendo usar 768px para abarcar tablets */
+    
+    .layout {
+        /*
+          Quitamos el "wrap" para que no salten a la siguiente línea.
+          Y en su lugar, hacemos que el contenedor sea deslizable horizontalmente.
+        */
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        overflow-y: hidden; /* Evitamos el scroll vertical innecesario */
+        scroll-snap-type: x mandatory; /* Esto ayuda a que se "enganchen" al deslizar */
+    }
+    
+    .sidebar-left,
+    .sidebar-right {
+        /*
+          Aquí le damos a las barras laterales un ancho fijo
+          para que no se hagan más pequeñas.
+        */
+        flex-shrink: 0;
+        width: 80vw; /* Un 80% del ancho de la pantalla, por ejemplo */
+        scroll-snap-align: center; /* Ayuda a que se centren al deslizar */
+    }
+
+    .main-content {
+        /*
+          Hacemos que el contenido principal ocupe
+          siempre todo el ancho de la pantalla.
+        */
+        width: 100vw;
+        flex-shrink: 0; /* Evita que se encoja */
+        scroll-snap-align: center;
+    }
+    
+    /* Regla para que el layout ocupe todo el espacio de la ventana */
+    .layout {
+        height: 100vh;
+    }
+
+    .container {
+        /* Necesitamos que el contenedor principal ya no tenga un ancho fijo */
+        padding: 50px 10vw 60px 2vw;
+        min-width: unset; /* Quita el min-width de 900px que tenías */
+        width: auto;
+    }
+    
+    /* Para que el scroll inicie en el centro */
+    .layout {
+        scroll-snap-type: none; /* Desactivamos el snap inicial */
+    }
+}
+  </style>
+</head>
+<body>
+  <h1>
+    
+  </h1>
+</body>
+((</html>
+1q
