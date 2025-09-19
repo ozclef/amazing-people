@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galery- Judas Iskariote </title>
+<style>
+  /* ====== RESET Y BASE ====== */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; font-family: sans-serif; background: linear-gardient(cyan , pink); }
+
+  /* ====== LAYOUT DESKTOP ====== */
+  .layout {
+    display: grid;
+    grid-template-columns: 25% 1fr 25%;
+    height: 100vh;
+
+  }
+  aside, main {
+    overflow-y: auto;
+    padding: 10px;
+  }
+  aside { background: #e5e7eb; }
+  main  { background: #fff; }
+
+  /* ====== NAVBAR SUPERIOR ====== */
+  .navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 50px;
+    background: linear-gardient(90deg, skyblue, violet, Cyan);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    z-index: 1000;
+  }
+  .navbar h1 { font-size: 1.2rem; }
+  .navbar button {
+    background: rgba(255,255,255,0.2);
+    border: none;
+    padding: 5px 10px;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  /* ====== MOBILE ====== */
+  @media (max-width: 768px) {
+    .layout {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr auto;
+    }
+    aside {
+      display: none; /* ocultar sidebars por defecto */
+    }
+    aside.active {
+      display: block;
+      position: fixed;
+      top: 50px;
+      bottom: 0;
+      width: 80%;
+      z-index: 999;
+    }
+    aside.left { left: 0; }
+    aside.right { right: 0; }
+  }
+
+  /* ====== IFRAMES ====== */
+  iframe {
+    width: 100%;
+    height: calc(100vh - 70px);
+    border: none;
+    background: white;
+  }
+  }
+</style>
+
+                                <style>
+  /* ====== RESET Y BASE ====== */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; font-family: sans-serif; background: #f3f4f6; }
+
+  /* ====== LAYOUT DESKTOP ====== */
+  .layout {
+    display: grid;
+    grid-template-columns: 25% 1fr 25%;
+    height: 100vh;
+  }
+  aside, main {
+    overflow-y: auto;
+    padding: 10px;
+  }
+  aside { background: #e5e7eb; }
+  main { background: skyblue; }
+
+  /* ====== NAVBAR SUPERIOR ====== */
+  .navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 50px;
+    background: linear-gradient(90deg, skyblue 0%, violet 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    z-index: 1000;
+  }
+  .navbar h1 { font-size: 1.0rem; }
+  .navbar button {
+    background: rgba(255,255,255,0.2);
+    border: none;
+    padding: 5px 10px;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  /* ====== MOBILE ====== */
+  @media (max-width: 768px) {
+    .layout {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr auto;
+    }
+    aside {
+      display: none; /* ocultar sidebars por defecto */
+    }
+    aside.active {
+      display: block;
+      position: fixed;
+      top: 50px;
+      bottom: 0;
+      width: 80%;
+      z-index: 999;
+    }
+    aside.left { left: 0; }
+    aside.right { right: 0; }
+  }
+
+  /* ====== IFRAMES ====== */
+  iframe {
+    width: 100%;
+    height: calc(100vh - 70px);
+    border: none;
+    background: white;
+  }
+                                  }
+</style>  
+</head>
+<body>
+  <!-- NAVBAR SUPERIOR -->
+<div class="navbar">
+  <button onclick="toggleSidebar('left')">☰</button>
+  <h1>Unicorn Makiato </h1>
+  <h3></h3>
+  <button onclick="toggleSidebar('right')">☰</button>
+</div>
+
+<!-- LAYOUT PRINCIPAL -->
+<div class="layout" style="padding-top:70px;">
+  <aside class="left">
+    <ul>
+      <li><a href="https://capitan-spalding.github.io/amazing-people/">Home-Artist</a></li>
+      <li><a href="https://capitan-spalding.github.io/amazing-people/GaleryImg.html">Galery Pictures - Zoe</a></li>
+      <li><a href="youtube.com/ElDiarioDeTerramar/">Youtube Channel El diario de Terramar</a></li>
+    </ul>
+<div style="width:100%; margin:1em 0; max-height:260px">
+    
+</div>
+  </aside>
+  
+  <main>
+
+
+<div>
+    <iframe src="multimedia.html"></iframe>
+  
+</div>
+  </main>
+
+<!--  TERMINA MAIN ---------------------------------------------------------------
+<div class="card">
+   <img style="display: block;-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://capitan-spalding.github.io/amazing-people/img/iso,shared,transfers,2017_28,28f4a687a1c9c800fd54d656b6f5f4400d0f243d.jpg">
+<img style="display: block;-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;"  src="https://capitan-spalding.github.io/amazing-people/img/iso,shared,transfers,2017_28,008e05b2e07c8cd6b65839b84a16e19fe9136b97.jpg" >
+</div>
+<div class="card">
+<img style="display: block;-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;"  src="https://capitan-spalding.github.io/amazing-people/img/iso,shared,transfers,2017_28,28f4a687a1c9c800fd54d656b6f5f4400d0f243d.jpg">
+</div>
+<div class="card">
+<img style="display: block;-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;"  src="https://capitan-spalding.github.io/amazing.people/iso,shared,transfers,2017_28,2d51df09e9de3e4905d55f35f123049e981452d7.jpg"/>
+</div>
+<div class="card">
+<img  style="display: block;-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;"  src="https://capitan-spalding.github.io/amazing.people/iso,shared,transfers,2017_28,321eae61043329c1e25651054167f13a89211c07.jpg"/>
+</div>
+<div class="card">
+<img style="display: block;-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;"  src="https://capitan-spalding.github.io/amazing.people/iso,shared,transfers,2017_28,70a46c0f51a278c5b15c0c67ceff57432aa3d206.jpg" />
+</div>
+<div class="card">
+<img style="display: block;-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;"  src="https://capitan-spalding.github.io/amazing.people/iso,shared,transfers,2017_28,73d796cba783b1f8fa7190c526ecf9d5ad1c7997.jpg" />
+</div>
+<div class="card">
+<img src="https://capitan-spalding.github.io/amazing.people/iso,shared,transfers,2017_28,8ba1f56e3a7991222f1cecf6999f3e7c4c3f9ebb.jpg" />
+</div>
+<div class="card">
+<img src="https://capitan-spalding.github.io/amazing.people/iso,shared,transfers,2017_28,9ce5aed8bc88a33b98882981736ed11344528565.jpg" />
+</div>
+<div class="card">
+<img src="https://capitan-spalding.github.io/amazing.people/iso,shared,transfers,2017_28,c5bf693dc287cd39d37c3450554bb2dbe9c64884.jpg" />
+</div>
+<div class="card">
+<img src="https://capitan-spalding.github.io/amazing.people/iso,shared,transfers,2017_28,d1c79fa1690d48b6006d946242abdb3acad4b1fe.jpg" />
+<img src="https://capitan-spalding.github.io/amazing.people/iso,shared,transfers,2017_29,e2f8cacb82cb3f94fd6b80112be183d0ec29c650.jpg" />
+<img src="" />
+<img src="" />
+<img src="" />
+<iframe src="https://capitan-spalding.github.io/amazing-people/iso,shared,transfers,2017_28,70a46c0f51a278c5b15c0c67ceff57432aa3d206.jpg" style="height:360px;"></iframe>
+      <iframe src="https://capitan-spalding.github.io/amazing-people/iso,shared,transfers,2017_28,73d796cba783b1f8fa7190c526ecf9d5ad1c7997.jpg" style="height:360px;"></iframe>
+    
+index.html
+1  iso,shared,transfers,2017_28,008e05b2e07c8cd6b65839b84a16e19fe9136b97.jpg
+2  iso,shared,transfers,2017_28,28f4a687a1c9c800fd54d656b6f5f4400d0f243d.jpg
+3  iso,shared,transfers,2017_28,2d51df09e9de3e4905d55f35f123049e981452d7.jpg
+4  iso,shared,transfers,2017_28,321eae61043329c1e25651054167f13a89211c07.jpg
+5  iso,shared,transfers,2017_28,70a46c0f51a278c5b15c0c67ceff57432aa3d206.jpg
+6  iso,shared,transfers,2017_28,73d796cba783b1f8fa7190c526ecf9d5ad1c7997.jpg
+7  iso,shared,transfers,2017_28,8ba1f56e3a7991222f1cecf6999f3e7c4c3f9ebb.jpg
+8  iso,shared,transfers,2017_28,9ce5aed8bc88a33b98882981736ed11344528565.jpg
+9  iso,shared,transfers,2017_28,a7111fa139e77aeec17f4e71846e9cabfda26b97.jpg
+10 iso,shared,transfers,2017_28,c5bf693dc287cd39d37c3450554bb2dbe9c64884.jpg
+11 iso,shared,transfers,2017_28,d1c79fa1690d48b6006d946242abdb3acad4b1fe.jpg
+12 iso,shared,transfers,2017_29,e2f8cacb82cb3f94fd6b80112be183d0ec29c650.jpg
+
+
+-->
+
+  
+  <!--ASIDE DERECHO-->
+  <aside class="right">
+  
+    <iframe src="otraVista.html"></iframe>
+  
+  <iframe width="90%" height="5vh" src="https://www.youtube.com/embed/SophpIn_vvo" title="COSAS DE MEXICANOS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </aside>
+</div>
+<!--FIN DE LAYOUT-->
+
+  
+
+<script>
+  // Lógica para mostrar/ocultar sidebars en móvil
+  function toggleSidebar(side) {
+    const aside = document.querySelector(`aside.${side}`);
+    aside.classList.toggle('active');
+  }
+
+  // Centrar contenido aunque haya zoom
+  window.addEventListener('resize', centerLayout);
+  window.addEventListener('load', centerLayout);
+  function centerLayout() {
+    document.body.style.display = 'flex';
+    document.body.style.justifyContent = 'center';
+  }
+</script>
+
+</body>
+</html>
